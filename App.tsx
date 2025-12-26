@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Sidebar from './components/Sidebar';
-import TimerDisplay from './components/TimerDisplay';
-import GoalCard from './components/GoalCard';
-import AICoach from './components/AICoach';
-import Charts from './components/Charts';
-import { Goal, TimeSession, ViewState } from './types';
+import Sidebar from './components/Sidebar.tsx';
+import TimerDisplay from './components/TimerDisplay.tsx';
+import GoalCard from './components/GoalCard.tsx';
+import AICoach from './components/AICoach.tsx';
+import Charts from './components/Charts.tsx';
+import { Goal, TimeSession, ViewState } from './types.ts';
 
 // Native ID generator to avoid external dependencies
 const generateId = () => {
@@ -138,6 +138,10 @@ const App: React.FC = () => {
 
   const handleDeleteGoal = (id: string) => {
     if(confirm("Are you sure? All historical data for this goal will be preserved in analytics, but the goal will be removed.")) {
+        // If the active session belongs to this goal, stop it first to prevent orphans
+        if (activeSession && activeSession.goalId === id) {
+            handleStopSession();
+        }
         setGoals(prev => prev.filter(g => g.id !== id));
     }
   };

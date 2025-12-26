@@ -1,5 +1,5 @@
 import { GoogleGenAI, Type } from "@google/genai";
-import { Goal, TimeSession, AIAdvice } from "../types";
+import { Goal, TimeSession, AIAdvice } from "../types.ts";
 
 const SYSTEM_INSTRUCTION = `
 You are GoldenHour, a world-class productivity coach and time strategist. 

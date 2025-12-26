@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, PieChart, Pie } from 'recharts';
-import { Goal, TimeSession, CATEGORY_COLORS } from '../types';
+import { Goal, TimeSession, CATEGORY_COLORS } from '../types.ts';
 
 interface ChartsProps {
   goals: Goal[];

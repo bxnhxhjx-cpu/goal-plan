@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Goal, TimeSession, AIAdvice } from '../types';
-import { getSmartAdvice } from '../services/geminiService';
+import { Goal, TimeSession, AIAdvice } from '../types.ts';
+import { getSmartAdvice } from '../services/geminiService.ts';
 
 interface AICoachProps {
   goals: Goal[];

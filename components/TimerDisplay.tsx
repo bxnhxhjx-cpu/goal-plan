@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Goal, TimeSession } from '../types';
+import { Goal, TimeSession } from '../types.ts';
 
 interface TimerDisplayProps {
   activeSession: TimeSession | null;
